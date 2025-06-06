@@ -3,62 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Curiosidades sobre Animais</title>
+  <title>Site com Botões Funcionais</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 40px;
       text-align: center;
-      padding: 50px;
-      background-color: #e0f7fa;
     }
 
     h1 {
       margin-bottom: 20px;
     }
 
-    .botoes {
-      margin-bottom: 30px;
-    }
-
     button {
-      padding: 15px 20px;
+      padding: 12px 25px;
       margin: 10px;
       font-size: 16px;
       cursor: pointer;
       border: none;
-      border-radius: 8px;
-      background-color: #00796b;
+      border-radius: 5px;
+      background-color: #007BFF;
       color: white;
       transition: background-color 0.3s;
     }
 
     button:hover {
-      background-color: #004d40;
+      background-color: #0056b3;
     }
 
-    #curiosidade {
-      margin-top: 20px;
-      font-size: 20px;
+    #mensagem {
+      margin-top: 30px;
+      font-size: 18px;
       color: #333;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    }
+
+    #area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px solid #ccc;
+      display: inline-block;
+      min-width: 200px;
     }
   </style>
 </head>
 <body>
 
-<h1>Descubra Curiosidades sobre Animais</h1>
+<h1>Botões Funcionais</h1>
 
-<div class="botoes">
-  <button onclick="mostrarCuriosidade('cachorro')">Cachorro</button>
-  <button onclick="mostrarCuriosidade('gato')">Gato</button>
-  <button onclick="mostrarCuriosidade('elefante')">Elefante</button>
-  <button onclick="mostrarCuriosidade('tigre')">Tigre</button>
-</div>
+<!-- Botões com diferentes funções -->
+<button onclick="mostrarMensagem()">Mostrar mensagem</button>
+<button onclick="mudarCor()">Mudar cor de fundo</button>
+<button onclick="esconderArea()">Esconder área</button>
+<button onclick="mostrarArea()">Mostrar área</button>
 
-<div id="curiosidade">Clique em um animal para ver uma curiosidade!</div>
+<div id="mensagem"></div>
+<div id="area">Esta é uma área que pode ser escondida ou mostrada.</div>
 
 <script>
-  function mostrarCuriosidade(animal) {
-    let curiosidadeTexto = '';
+  function mostrarMensagem() {
+    document.getElementById('mensagem').textContent = 'Você clicou no botão!';
+  }
+
+  function mudarCor() {
+    document.body.style.backgroundColor = getRandomColor();
+  }
+
+  function esconderArea() {
+    document.getElementById('area').style.display = 'none';
+  }
+
+  function mostrarArea() {
+    document.getElementById('area').style.display = 'block';
+  }
+
+  // Função para gerar uma cor aleatória
+  function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+</script>
+
+</body>
+</html>
