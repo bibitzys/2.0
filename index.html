@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curiosidades sobre Animais</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #e0f7fa;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .botoes {
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #00796b;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    #curiosidade {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Descubra Curiosidades sobre Animais</h1>
+
+<div class="botoes">
+  <button onclick="mostrarCuriosidade('cachorro')">Cachorro</button>
+  <button onclick="mostrarCuriosidade('gato')">Gato</button>
+  <button onclick="mostrarCuriosidade('elefante')">Elefante</button>
+  <button onclick="mostrarCuriosidade('tigre')">Tigre</button>
+</div>
+
+<div id="curiosidade">Clique em um animal para ver uma curiosidade!</div>
+
+<script>
+  function mostrarCuriosidade(animal) {
+    let curiosidadeTexto = '';
